@@ -42,3 +42,29 @@ Since the project is containerized, you don't need to install Python or Pip pack
 Open your terminal at the root of the project folder and run:
 ```bash
 docker build -t automated-etl-pipeline .
+```
+
+### 2. Execute the Automated Container
+To run the pipeline container and ensure the database file saves straight to your workspace folder, use this volume mount run command:
+```bash
+docker run --rm -v $(pwd)/data:/app/data automated-etl-pipeline
+```
+
+### 3. Inspecting the SQL Warehouse Data
+Once the container finishes executing, your data is officially locked into the SQL database. You can drop straight into the database file using the SQLite command-line tool right in your terminal:
+
+```bash
+sqlite3 data/pipeline_database.db
+```
+
+Your terminal prompt will change to `sqlite>`. Now you can run standard SQL queries to inspect the cleaned records:
+
+```sql
+-- See the total count of successfully ingested rows
+SELECT COUNT(*) FROM users;
+
+-- Look at a slice of the actual cleaned profiles
+SELECT first_name, last_name, email, country, age FROM users LIMIT 3;
+```
+
+To exit the database console and return to your normal terminal prompt, simply type: `.exit`
