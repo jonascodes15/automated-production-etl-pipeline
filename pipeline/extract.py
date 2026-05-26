@@ -19,3 +19,4 @@ def run_extraction() -> Path:
         
     print(f" Extracted 10 raw profiles to {output_path}")
     return output_path
+
