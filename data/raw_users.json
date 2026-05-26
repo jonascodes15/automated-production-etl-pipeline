@@ -1,0 +1,562 @@
+[
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Antonin",
+            "last": "Dupont"
+        },
+        "location": {
+            "street": {
+                "number": 4314,
+                "name": "Rue Dumenge"
+            },
+            "city": "Montreuil",
+            "state": "Haute-Corse",
+            "country": "France",
+            "postcode": 62804,
+            "coordinates": {
+                "latitude": "-16.1062",
+                "longitude": "-8.4480"
+            },
+            "timezone": {
+                "offset": "-3:00",
+                "description": "Brazil, Buenos Aires, Georgetown"
+            }
+        },
+        "email": "antonin.dupont@example.com",
+        "login": {
+            "uuid": "1356e859-54af-4b64-ad09-d8e217968951",
+            "username": "beautifulmeercat876",
+            "password": "surfer1",
+            "salt": "vsO0UAqP",
+            "md5": "f583c7183c9466416615757dd7e1f09d",
+            "sha1": "a39fdcb9f5617871813e73c49004ef11c1bc7de1",
+            "sha256": "b4e2a7c90b7aed8ab8f830a757040e516ced738f977f0f3f97f9a98a331e03de"
+        },
+        "dob": {
+            "date": "1973-08-16T02:41:55.491Z",
+            "age": 52
+        },
+        "registered": {
+            "date": "2020-04-30T02:25:37.568Z",
+            "age": 6
+        },
+        "phone": "01-45-45-53-10",
+        "cell": "06-45-52-96-80",
+        "id": {
+            "name": "INSEE",
+            "value": "1730777724718 01"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/14.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/14.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/14.jpg"
+        },
+        "nat": "FR"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Mademoiselle",
+            "first": "Nora",
+            "last": "Durand"
+        },
+        "location": {
+            "street": {
+                "number": 2060,
+                "name": "Rue du Bon-Pasteur"
+            },
+            "city": "Arch",
+            "state": "Graub\u00fcnden",
+            "country": "Switzerland",
+            "postcode": 3465,
+            "coordinates": {
+                "latitude": "-80.2971",
+                "longitude": "-6.0343"
+            },
+            "timezone": {
+                "offset": "+3:30",
+                "description": "Tehran"
+            }
+        },
+        "email": "nora.durand@example.com",
+        "login": {
+            "uuid": "983ead0b-bb47-4b3d-afc4-d93c051d1012",
+            "username": "orangeswan534",
+            "password": "mona",
+            "salt": "1eaglrs6",
+            "md5": "957a13663ebb3287a44f465a657c1e4c",
+            "sha1": "859b284924dd8162ab1ec537701141c58912b448",
+            "sha256": "b100b188269ba37913982c942e6134dde4c8f36fd559b5e2e19756688db8da40"
+        },
+        "dob": {
+            "date": "1978-12-05T03:23:14.562Z",
+            "age": 47
+        },
+        "registered": {
+            "date": "2004-08-09T14:42:33.593Z",
+            "age": 21
+        },
+        "phone": "079 065 85 19",
+        "cell": "078 003 04 66",
+        "id": {
+            "name": "AVS",
+            "value": "756.6819.2821.52"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/52.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/52.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/52.jpg"
+        },
+        "nat": "CH"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Dalibor",
+            "last": "Yastremskiy"
+        },
+        "location": {
+            "street": {
+                "number": 1759,
+                "name": "Observatorna"
+            },
+            "city": "Prip'yat",
+            "state": "Zhitomirska",
+            "country": "Ukraine",
+            "postcode": 57841,
+            "coordinates": {
+                "latitude": "-40.3941",
+                "longitude": "-69.7360"
+            },
+            "timezone": {
+                "offset": "+8:00",
+                "description": "Beijing, Perth, Singapore, Hong Kong"
+            }
+        },
+        "email": "dalibor.yastremskiy@example.com",
+        "login": {
+            "uuid": "e98d7918-34d1-4a8e-92fa-00507a9ac2f3",
+            "username": "redtiger467",
+            "password": "america",
+            "salt": "A6DVQ8N6",
+            "md5": "e38034481583b61a7cf7ae0f77df607f",
+            "sha1": "079c53b0b92f94365429cc034c929da9723d6126",
+            "sha256": "a48cb89e8632e08c2034b74f9a62745670c2dfd0eea62c2a0fca7c784974cead"
+        },
+        "dob": {
+            "date": "1995-03-16T12:09:07.697Z",
+            "age": 31
+        },
+        "registered": {
+            "date": "2017-12-20T01:26:17.972Z",
+            "age": 8
+        },
+        "phone": "(067) N62-0501",
+        "cell": "(067) X29-1368",
+        "id": {
+            "name": "",
+            "value": null
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/14.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/14.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/14.jpg"
+        },
+        "nat": "UA"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Ms",
+            "first": "Sowjanya",
+            "last": "Gupta"
+        },
+        "location": {
+            "street": {
+                "number": 4609,
+                "name": "Fontainhas"
+            },
+            "city": "Cuttack",
+            "state": "Maharashtra",
+            "country": "India",
+            "postcode": 32942,
+            "coordinates": {
+                "latitude": "57.4411",
+                "longitude": "-77.9175"
+            },
+            "timezone": {
+                "offset": "+3:00",
+                "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+            }
+        },
+        "email": "sowjanya.gupta@example.com",
+        "login": {
+            "uuid": "284e74fd-2ab3-486e-bcaf-ae1ae6ec238a",
+            "username": "smallgoose805",
+            "password": "welcome",
+            "salt": "slDOXYOW",
+            "md5": "2faff7cd5f58841d47a3498035abed89",
+            "sha1": "5e068a1ff46db82a4813dc38553701f385817e0b",
+            "sha256": "eb2c89d692f91d62dde1b8ef3cdb378363c526961062a97dcabca10878fee6a6"
+        },
+        "dob": {
+            "date": "2000-02-05T15:07:34.189Z",
+            "age": 26
+        },
+        "registered": {
+            "date": "2009-04-22T21:36:10.490Z",
+            "age": 17
+        },
+        "phone": "8891598132",
+        "cell": "8070221235",
+        "id": {
+            "name": "UIDAI",
+            "value": "806875923159"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/66.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/66.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/66.jpg"
+        },
+        "nat": "IN"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Miss",
+            "first": "Laura",
+            "last": "S\u00e1ez"
+        },
+        "location": {
+            "street": {
+                "number": 7206,
+                "name": "Avenida de Castilla"
+            },
+            "city": "Barcelona",
+            "state": "Asturias",
+            "country": "Spain",
+            "postcode": 67660,
+            "coordinates": {
+                "latitude": "-45.6766",
+                "longitude": "-158.2343"
+            },
+            "timezone": {
+                "offset": "+3:00",
+                "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+            }
+        },
+        "email": "laura.saez@example.com",
+        "login": {
+            "uuid": "8134e4f2-6bd8-49d5-b874-394427acdacf",
+            "username": "bluecat706",
+            "password": "losers",
+            "salt": "BCEKVBgA",
+            "md5": "d396c72ffb895e377c318f2e8a51e3c0",
+            "sha1": "921775622e010c59ee9510975780f19cd8c53680",
+            "sha256": "07c1bc2941f5f2775d778f11df0d482a1a55f987cf90de9c75b7858960b9e2ed"
+        },
+        "dob": {
+            "date": "1947-04-16T00:03:28.736Z",
+            "age": 79
+        },
+        "registered": {
+            "date": "2017-12-20T02:45:23.354Z",
+            "age": 8
+        },
+        "phone": "988-973-649",
+        "cell": "644-058-176",
+        "id": {
+            "name": "DNI",
+            "value": "29489359-V"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/75.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/75.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/75.jpg"
+        },
+        "nat": "ES"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Felipe",
+            "last": "Cruz"
+        },
+        "location": {
+            "street": {
+                "number": 4800,
+                "name": "Paseo de Extremadura"
+            },
+            "city": "Torrevieja",
+            "state": "Comunidad Valenciana",
+            "country": "Spain",
+            "postcode": 89669,
+            "coordinates": {
+                "latitude": "54.3855",
+                "longitude": "-52.7910"
+            },
+            "timezone": {
+                "offset": "+2:00",
+                "description": "Kaliningrad, South Africa"
+            }
+        },
+        "email": "felipe.cruz@example.com",
+        "login": {
+            "uuid": "cf5a8ee2-8fd2-454a-8c04-32348d1aeb8f",
+            "username": "organicfish747",
+            "password": "1965",
+            "salt": "GuvIM0EL",
+            "md5": "8251df58464dc742c269c06133afab6a",
+            "sha1": "ebc4041227fe7658e114c122a9a88d941fea628c",
+            "sha256": "88af908cc59cbd7fecfeaf68adcd141cb0cf989389c2a6692cbb4dbb34cfa7c4"
+        },
+        "dob": {
+            "date": "1987-09-23T03:58:18.743Z",
+            "age": 38
+        },
+        "registered": {
+            "date": "2003-11-07T20:37:23.749Z",
+            "age": 22
+        },
+        "phone": "948-418-449",
+        "cell": "641-534-775",
+        "id": {
+            "name": "DNI",
+            "value": "05219746-R"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/66.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/66.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/66.jpg"
+        },
+        "nat": "ES"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Ivo",
+            "last": "\u00d8degaard"
+        },
+        "location": {
+            "street": {
+                "number": 9719,
+                "name": "Borger Withs gate"
+            },
+            "city": "Algarheim",
+            "state": "Nord-Tr\u00f8ndelag",
+            "country": "Norway",
+            "postcode": "5857",
+            "coordinates": {
+                "latitude": "-49.3751",
+                "longitude": "-71.0786"
+            },
+            "timezone": {
+                "offset": "-9:00",
+                "description": "Alaska"
+            }
+        },
+        "email": "ivo.odegaard@example.com",
+        "login": {
+            "uuid": "18f598d0-8b11-41a7-b79c-716831a0cced",
+            "username": "lazykoala956",
+            "password": "lifetime",
+            "salt": "u7jGiAdj",
+            "md5": "d078da9ad5d1f4be5fb42c118b4214a5",
+            "sha1": "63a7910e0556664490327bd028d6a51902716ef2",
+            "sha256": "84b09de3567c38b29d7b623e5b126c9ef1c09d675f7ca916e35ea1986e362ab3"
+        },
+        "dob": {
+            "date": "1955-06-10T09:09:24.114Z",
+            "age": 70
+        },
+        "registered": {
+            "date": "2011-06-25T15:18:17.745Z",
+            "age": 14
+        },
+        "phone": "63833444",
+        "cell": "90326365",
+        "id": {
+            "name": "FN",
+            "value": "10065545913"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/85.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/85.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/85.jpg"
+        },
+        "nat": "NO"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Miss",
+            "first": "Erica",
+            "last": "Fosser"
+        },
+        "location": {
+            "street": {
+                "number": 7833,
+                "name": "Stjerneblokkveien"
+            },
+            "city": "Hvittingfoss",
+            "state": "Finnmark - Finnm\u00e1rku",
+            "country": "Norway",
+            "postcode": "0354",
+            "coordinates": {
+                "latitude": "81.4521",
+                "longitude": "78.1593"
+            },
+            "timezone": {
+                "offset": "+4:00",
+                "description": "Abu Dhabi, Muscat, Baku, Tbilisi"
+            }
+        },
+        "email": "erica.fosser@example.com",
+        "login": {
+            "uuid": "5a7f7719-d2c9-43f6-9e58-ed545287ee8e",
+            "username": "bigbear907",
+            "password": "circle",
+            "salt": "KcPMHMbB",
+            "md5": "6c52b64a73f76527a65f8a700fd684e0",
+            "sha1": "e970dca4995ded862ebe0322b20127f57af05a44",
+            "sha256": "c7ca9a1a419a733c6c434d5ff1d06ea98f9f37aec1d8364fbcb3148a90039762"
+        },
+        "dob": {
+            "date": "1974-11-23T04:23:06.467Z",
+            "age": 51
+        },
+        "registered": {
+            "date": "2018-08-01T15:15:24.770Z",
+            "age": 7
+        },
+        "phone": "68020557",
+        "cell": "96831191",
+        "id": {
+            "name": "FN",
+            "value": "23117425819"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/27.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/27.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/27.jpg"
+        },
+        "nat": "NO"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Monsieur",
+            "first": "Tristan",
+            "last": "Dupuis"
+        },
+        "location": {
+            "street": {
+                "number": 4320,
+                "name": "Rue de la Mairie"
+            },
+            "city": "Bournens",
+            "state": "Thurgau",
+            "country": "Switzerland",
+            "postcode": 6973,
+            "coordinates": {
+                "latitude": "4.9806",
+                "longitude": "-63.6328"
+            },
+            "timezone": {
+                "offset": "-3:00",
+                "description": "Brazil, Buenos Aires, Georgetown"
+            }
+        },
+        "email": "tristan.dupuis@example.com",
+        "login": {
+            "uuid": "589f7909-4bc1-4a6d-a2d7-6e62846cc809",
+            "username": "organicpanda919",
+            "password": "fallout",
+            "salt": "oMsqjyTm",
+            "md5": "11692880bc65222cecc9e8ed6f907e4d",
+            "sha1": "63ad30d81dcc76ae5e5fa90ee8dec0cb14584653",
+            "sha256": "5c08baee72609b72f4fa829abc70a2bcf70a67031395f4f497e49316de54612e"
+        },
+        "dob": {
+            "date": "1994-02-02T04:44:46.587Z",
+            "age": 32
+        },
+        "registered": {
+            "date": "2018-04-20T21:58:00.345Z",
+            "age": 8
+        },
+        "phone": "076 164 89 94",
+        "cell": "079 578 18 68",
+        "id": {
+            "name": "AVS",
+            "value": "756.3001.1076.25"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/43.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/43.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/43.jpg"
+        },
+        "nat": "CH"
+    },
+    {
+        "gender": "female",
+        "name": {
+            "title": "Miss",
+            "first": "Mira",
+            "last": "Bajevi\u0107"
+        },
+        "location": {
+            "street": {
+                "number": 8179,
+                "name": "Rate Petrovi\u0107a"
+            },
+            "city": "\u0160trpce",
+            "state": "South Banat",
+            "country": "Serbia",
+            "postcode": 54659,
+            "coordinates": {
+                "latitude": "-50.9678",
+                "longitude": "-135.6769"
+            },
+            "timezone": {
+                "offset": "+7:00",
+                "description": "Bangkok, Hanoi, Jakarta"
+            }
+        },
+        "email": "mira.bajevic@example.com",
+        "login": {
+            "uuid": "eb6bac76-f1f1-4073-9f28-2602886f37d8",
+            "username": "yellowrabbit108",
+            "password": "jamaica",
+            "salt": "gq1jcOLe",
+            "md5": "1f03a587930599e2b63a970c72b333ce",
+            "sha1": "52eeefc53da5d4e0be576b87b9d0a2a9a231cac0",
+            "sha256": "0dc13769be4e6f2be49c26bdf9d8138780a0a6f318e2c6a1cecbeec4761db17f"
+        },
+        "dob": {
+            "date": "1976-02-05T15:26:38.554Z",
+            "age": 50
+        },
+        "registered": {
+            "date": "2007-07-04T10:35:26.535Z",
+            "age": 18
+        },
+        "phone": "033-2634-695",
+        "cell": "065-8384-426",
+        "id": {
+            "name": "SID",
+            "value": "913141952"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/women/71.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/women/71.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/71.jpg"
+        },
+        "nat": "RS"
+    }
+]
