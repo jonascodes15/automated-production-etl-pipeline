@@ -1,65 +1,101 @@
-# Automated Containerized Data Pipeline (API → SQL Warehouse)
+# ETL Pipeline: API to SQL Warehouse
 
 ## Overview
-This project is a fully functional, production-ready **Extract, Transform, Load (ETL)** data infrastructure system. Rather than relying on loose, standalone Python scripts that process local files, it builds a complete data lifecycle — programmatically connecting to a live web API, capturing raw user profile data, cleaning and standardizing fields with Python, and loading the results into a local SQL data warehouse built on SQLite. The entire application is packaged inside a Docker container, so it runs consistently across any environment (local machines, AWS, or production servers) without manual dependency installation or database configuration.
 
----
+This project is a containerized ETL pipeline that pulls user profile data from a live public API, cleans and standardizes it with Python, and loads it into a local SQL warehouse. It was my first data engineering project, built to learn the core extract, transform, load pattern end to end rather than practicing each step in isolation.
 
-## Pipeline Architecture
+Instead of relying on standalone scripts that process local files, the pipeline connects to a real HTTP API, handles the messy nested response it returns, and writes clean, structured records into a database using an idempotent load pattern. The whole thing runs inside Docker so it behaves the same way regardless of the machine it runs on.
 
-The system is broken into three isolated, modular phases orchestrated by a central entry point (`main.py`):
+## Use case
 
-### 1. Extraction — `pipelines/extract.py`
-Establishes an HTTP connection to the [RandomUser.me](https://randomuser.me) API, which serves as a live data source. It pulls 10 raw user profiles per request. The raw response is nested and unstructured. The script automatically creates a `data/` landing zone directory if one doesn't exist, then writes the payload to `raw_users.json`.
+Raw data from external APIs is rarely ready to use. It arrives nested, inconsistently formatted, and full of fields you don't need. This project simulates a common early stage data engineering task: taking an unreliable external source and turning it into something a database and downstream users can actually rely on, on a repeatable basis rather than a one time script run.
 
-### 2. Transformation — `pipelines/transform.py`
-Reads the raw JSON file from the landing zone and flattens the nested structure (e.g., name fields buried inside a `name` object) so the data fits cleanly into a relational table. It also strips unnecessary fields (such as image URLs and phone numbers) and standardizes formatting — emails are lowercased and names are properly capitalized.
+## System Architecture & Data Flow
 
-### 3. Loading — `pipelines/load.py`
-Connects to a local SQLite database file (`data/pipeline_database.db`), which lives directly in the project directory for easy deployment and version tracking. It creates a structured `users` table with the columns `id`, `first_name`, `last_name`, `email`, `country`, and `age`. The loader uses **UPSERT** logic (`ON CONFLICT DO UPDATE`), an industry-standard pattern that updates existing records on repeat pipeline runs instead of crashing or producing duplicate rows.
+```mermaid
+graph TD
+    classDef source fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff;
+    classDef process fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff;
+    classDef storage fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;
+    classDef orchestration fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
 
----
+    A[RandomUser.me API]:::source -->|HTTP GET| B[extract.py]:::process
+    B -->|raw_users.json| C[transform.py]:::process
+    C -->|flattened, cleaned records| D[load.py]:::process
+    D -->|UPSERT| E[(SQLite Database)]:::storage
+    F[main.py]:::orchestration -.->|runs in sequence| B
+    F -.-> C
+    F -.-> D
+
+    linkStyle default stroke:#64748b,stroke-width:2px;
+```
+
+## Pipeline Breakdown
+
+### 1. Extraction: `pipelines/extract.py`
+
+Connects to the [RandomUser.me](https://randomuser.me) API and pulls 10 raw user profiles per run. The response is nested and unstructured. The script creates a `data/` landing zone directory if one doesn't already exist and writes the raw payload to `raw_users.json`, keeping the untouched source data separate from anything processed later.
+
+### 2. Transformation: `pipelines/transform.py`
+
+Reads the raw JSON from the landing zone and flattens the nested structure, for example pulling name fields out of a nested `name` object, so the data fits a relational table. It also drops fields that aren't needed (image URLs, phone numbers) and standardizes formatting: emails are lowercased and names are properly capitalized.
+
+### 3. Loading: `pipelines/load.py`
+
+Connects to a local SQLite database (`data/pipeline_database.db`) and writes to a `users` table with columns for id, first name, last name, email, country, and age. The loader uses UPSERT logic (`ON CONFLICT DO UPDATE`), so running the pipeline again updates existing records instead of creating duplicates or crashing. This is the same idempotency pattern production pipelines rely on for safe reruns.
 
 ## Tech Stack
 
 | Tool | Role |
-|---|---|
-| **Python** | Core language for extraction and transformation logic |
-| **Docker** | Containerizes the app and manages all dependencies |
-| **SQLite** | Lightweight relational database engine for the local warehouse |
-| **Requests** | Handles HTTP connections and API calls |
-
----
+|------|------|
+| Python | Core language for extraction and transformation logic |
+| Docker | Containerizes the app so it runs the same way anywhere |
+| SQLite | Lightweight relational database for the local warehouse |
+| Requests | Handles HTTP connections and API calls |
 
 ## How to Run
 
-Since the project is fully containerized, you do not need Python or any packages installed on your host machine — Docker handles everything.
+The project is fully containerized, so Docker is the only requirement on your machine.
 
-### 1. Build the Image
-From the root of the project directory, run:
+### 1. Build the image
+
 ```bash
-docker build -t automated-etl-pipeline .
+docker build -t etl-pipeline .
 ```
 
-### 2. Run the Container
-Use a volume mount to ensure the database file is saved to your local workspace:
+### 2. Run the container
+
 ```bash
-docker run --rm -v $(pwd)/data:/app/data automated-etl-pipeline
+docker run --rm -v $(pwd)/data:/app/data etl-pipeline
 ```
 
-### 3. Inspect the Data Warehouse
-Once the container finishes, query the database directly from your terminal using the SQLite CLI:
+The volume mount ensures the database file is saved to your local workspace instead of disappearing when the container exits.
+
+### 3. Inspect the data
+
 ```bash
 sqlite3 data/pipeline_database.db
 ```
 
-Your prompt will change to `sqlite>`. Run standard SQL to inspect the loaded records:
+Then run standard SQL to check the results:
+
 ```sql
--- Count successfully ingested rows
+-- Count ingested rows
 SELECT COUNT(*) FROM users;
 
--- Preview cleaned user profiles
+-- Preview cleaned records
 SELECT first_name, last_name, email, country, age FROM users LIMIT 3;
 ```
 
-Type `.exit` to return to your normal terminal prompt.
+Type `.exit` to leave the SQLite shell.
+
+## What this is (and isn't)
+
+This is a working demonstration of the extract, transform, load pattern, including idempotent loading and containerized execution, built as a learning project rather than a production system. It does not include scheduling or orchestration (a natural next step would be running this as an Airflow DAG), automated testing, structured logging, or a production grade warehouse like PostgreSQL or Snowflake in place of SQLite. Those are deliberate scope limits for a first project, and areas I'm actively building toward in later pipelines.
+
+## What I'd improve next
+
+- Add Airflow or a simple cron based scheduler to automate runs
+- Replace SQLite with PostgreSQL to better reflect a real warehouse setup
+- Add basic unit tests for the transform step
+- Add structured logging instead of console output
